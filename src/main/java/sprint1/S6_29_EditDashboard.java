@@ -1,4 +1,4 @@
-package week2.Day2;
+package sprint1;
 
 import java.time.Duration;
 
@@ -10,12 +10,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class EditDashboard {
+public class S6_29_EditDashboard {
 
 	public ChromeOptions options = new ChromeOptions();
 
 	@Test
-	public void test() {
+	public void test() throws InterruptedException {
 		options.addArguments("--disable-notifications");
 		ChromeDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
@@ -36,6 +36,7 @@ public class EditDashboard {
 				.click();
 		driver.findElement(By.xpath("//span[text()='Edit']")).click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		Thread.sleep(5000);
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='dashboard']")));
 		driver.findElement(By.xpath("//button[@title='Edit Dashboard Properties']")).click();
 		driver.findElement(By.xpath("//input[@id='dashboardDescriptionInput']")).clear();

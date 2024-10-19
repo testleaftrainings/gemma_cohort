@@ -1,4 +1,4 @@
-package week2.Assignment;
+package sprint1;
 
 import java.time.Duration;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-public class DeleteAttachFromCampaign {
+public class S6_39_DeleteAttachFromCampaign {
 
 	public ChromeOptions options = new ChromeOptions();
 
