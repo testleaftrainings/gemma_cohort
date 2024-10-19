@@ -1,4 +1,4 @@
-package week1.Assignment;
+package sprint1;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 import com.google.common.base.Predicate;
 
-public class VerifySorting {
+public class S6_4_VerifySorting {
 
 	public ChromeOptions options = new ChromeOptions();
 	ChromeDriver driver = new ChromeDriver(options);

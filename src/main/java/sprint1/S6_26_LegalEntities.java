@@ -1,20 +1,14 @@
-package week2.Day1;
+package sprint1;
 
 import java.awt.AWTException;
 import java.text.ParseException;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,10 +16,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class LegalEntities {
+public class S6_26_LegalEntities {
 	 public ChromeDriver driver;
 	@Test
-	public void test() throws AWTException, ParseException {
+	public void test() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);
@@ -51,6 +45,7 @@ public class LegalEntities {
                 dateTimes.add(dateTime); 
         }
 		Collections.sort(dateTimes);
+		Thread.sleep(5000);
 		WebElement lastModify = driver.findElement(By.xpath("//span[@title='Last Modified Date']"));
 		driver.executeScript("arguments[0].click();", lastModify);
 		driver.executeScript("arguments[0].click();", lastModify);

@@ -1,4 +1,4 @@
-package week2.Day1;
+package sprint1;
 
 import java.awt.AWTException;
 import java.time.Duration;
@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class EditContact {
+public class S6_20_EditContact {
 
 	public ChromeOptions options = new ChromeOptions();
 	ChromeDriver driver = new ChromeDriver(options);

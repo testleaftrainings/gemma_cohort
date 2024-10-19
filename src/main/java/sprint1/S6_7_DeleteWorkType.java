@@ -1,4 +1,4 @@
-package week1.Assignment;
+package sprint1;
 
 import java.time.Duration;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class DeleteWorkType {
+public class S6_7_DeleteWorkType {
 
 	public ChromeOptions options = new ChromeOptions();
 

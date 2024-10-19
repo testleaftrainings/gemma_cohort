@@ -1,4 +1,4 @@
-package week1.Assignment;
+package sprint1;
 
 import java.time.Duration;
 
@@ -7,24 +7,30 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class CreateOpportunity {
+public class S6_14_CreateOpportunity {
 
 	public ChromeOptions options = new ChromeOptions();
 
 	@Test
-	public void test() {
-		options.addArguments("-disable--notifications");
+	public void test() throws InterruptedException {
+		
+		options.addArguments("--disable-notifications");
 		ChromeDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("https://login.salesforce.com");
 		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
 		driver.findElement(By.id("password")).sendKeys("Leaf$321");
 		driver.findElement(By.id("Login")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("//button[@title='App Launcher']/div[1]")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebElement applauncher = driver.findElement(By.xpath("//button[@title='App Launcher']/div[1]"));
+		wait.until(ExpectedConditions.elementToBeClickable(applauncher));
+		applauncher.click();
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//p[text()='Sales']")).click();
@@ -47,6 +53,6 @@ public class CreateOpportunity {
 		}
 		else
 			System.out.println("Not Expected result");
-
+		driver.close();
 	}
 }

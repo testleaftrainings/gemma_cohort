@@ -1,4 +1,4 @@
-package week2.Assignment;
+package sprint1;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class EditCampaign {
+public class S6_40_EditCampaign {
 
 	public ChromeOptions options = new ChromeOptions();
 

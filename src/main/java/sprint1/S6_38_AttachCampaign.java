@@ -1,4 +1,4 @@
-package week2.Assignment;
+package sprint1;
 
 import java.time.Duration;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class AttachCampaign {
+public class S6_38_AttachCampaign {
 
 	public ChromeOptions options = new ChromeOptions();
 
@@ -22,6 +22,7 @@ public class AttachCampaign {
 		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
 		driver.findElement(By.id("password")).sendKeys("Leaf$321");
 		driver.findElement(By.id("Login")).click();
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@title='App Launcher']/div[1]")).click();
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		driver.findElement(By.xpath("//p[text()='Sales']")).click();
