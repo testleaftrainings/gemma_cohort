@@ -1,13 +1,18 @@
 package sprint1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -15,10 +20,15 @@ import org.testng.annotations.Test;
 public class S625CreateLeagalEntitywithoutmandfiekds {
 	
 	@Test
-	public void createLeagalentwithoutmandfields() throws InterruptedException {
+	public void createLeagalentwithoutmandfields() throws InterruptedException, MalformedURLException {
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--disable-notifications");
-		ChromeDriver driver = new ChromeDriver(option);
+		DesiredCapabilities dc = new DesiredCapabilities(option);
+		dc.setBrowserName("chrome");
+		dc.setPlatform(Platform.LINUX);
+		@SuppressWarnings("deprecation")
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
+		//ChromeDriver driver = new ChromeDriver(option);
 		//Login to https://login.salesforce.com
 		driver.get("https://testleaf-7b-dev-ed.develop.my.salesforce.com/");
 		driver.manage().window().maximize();
