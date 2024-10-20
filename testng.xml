@@ -4,6 +4,7 @@
   <test thread-count="5" name="Demo">
     <classes>
       <class name="sprint1.DemoTest"/>
+      <class name="sprint1.SF_028CreateDashBoard"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
