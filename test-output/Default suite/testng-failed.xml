@@ -3,11 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="sprint1.S61CreateAccount">
         <methods>
           <include name="addAccount"/>
         </methods>
       </class> <!-- sprint1.S61CreateAccount -->
+=======
+      <class name="sprint1.SF_006DeleteAccount">
+        <methods>
+          <include name="createAccount"/>
+          <include name="deleteAccount_S6_3"/>
+          <include name="preSetup"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- sprint1.SF_006DeleteAccount -->
+>>>>>>> 6a1e636251428a0f2298c0a79ce22f5cb2608a49
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

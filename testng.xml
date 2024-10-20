@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Demo">
+    <classes>
+      <class name="sprint1.DemoTest"/>
+      <class name="sprint1.SF_028CreateDashBoard"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
