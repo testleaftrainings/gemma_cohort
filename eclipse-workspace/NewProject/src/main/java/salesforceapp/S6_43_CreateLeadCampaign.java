@@ -47,9 +47,12 @@ public class S6_43_CreateLeadCampaign {
 		Thread.sleep(7000);
 
 		// Click on New Lead
-		//WebElement element4 = driver.findElement(By.xpath("//h1[text()='Add Leads to Campaign']//following::input[@title='Search Leads']"));
-		//driver.executeScript("arguments[0].click();", element4);
-		driver.findElement(By.xpath("//h1[text()='Add Leads to Campaign']//following::input[@title='Search Leads']//following::lightning-icon[1]")).click();
+		// WebElement element4 = driver.findElement(By.xpath("//h1[text()='Add Leads to
+		// Campaign']//following::input[@title='Search Leads']"));
+		// driver.executeScript("arguments[0].click();", element4);
+		driver.findElement(By.xpath(
+				"//h1[text()='Add Leads to Campaign']//following::input[@title='Search Leads']//following::lightning-icon[1]"))
+				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//span[text()='New Lead']")).click();
 
@@ -90,7 +93,7 @@ public class S6_43_CreateLeadCampaign {
 		// Navigate to Leads tab
 		WebElement element6 = driver.findElement(By.xpath("//span[text()='Leads']"));
 		driver.executeScript("arguments[0].click();", element6);
-		
+
 		// Search for Lead with your Name
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//input[@placeholder='Search this list...'])")).sendKeys("Rajeswari Subramani",
