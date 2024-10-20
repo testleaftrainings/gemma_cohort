@@ -1,11 +1,17 @@
 package salesforceapp;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,7 +19,7 @@ import org.testng.annotations.Test;
 
 public class S6_16_DeleteOpportunity {
 	@Test
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, MalformedURLException {
 
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
@@ -38,10 +44,24 @@ public class S6_16_DeleteOpportunity {
 		// Click on Opportunity tab
 		WebElement element = driver.findElement(By.xpath("//span[text()='Opportunities']"));
 		driver.executeScript("arguments[0].click();", element);
+		// Create new opportunity
+		driver.findElement(By.xpath("//div[@title='New']")).click();
+		driver.findElement(By.xpath("(//label[text()='Opportunity Name']//following::input)[1]"))
+				.sendKeys("Salesforce Automation by Rajeswari");
+		driver.findElement(By.xpath("(//label[text()='Close Date']//following::input)[1]")).click();
+		driver.findElement(By.xpath("//table[@class='slds-datepicker__month']//following::td[@aria-current='date']"))
+				.click();
+		driver.findElement(By.xpath("(//label[text()='Stage']//following::button)[1]")).click();
+		driver.findElement(By.xpath("//span[@title='Needs Analysis']")).click();
+		driver.findElement(By.xpath("//span[text()='Description Information']//following::button[text()='Save']"))
+				.click();
+		Thread.sleep(5000);
+		WebElement element1 = driver.findElement(By.xpath("//span[text()='Opportunities']"));
+		driver.executeScript("arguments[0].click();", element1);
 
 		// Search the Opportunity 'Salesforce Automation by *Your Name*'
 		driver.findElement(By.xpath("//input[@name='Opportunity-search-input']"))
-				.sendKeys("Salesforce Automation by Rajeswari");
+				.sendKeys("Salesforce Automation by Rajeswari", Keys.ENTER);
 
 		// Click on the Dropdown icon and Select Delete
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -63,6 +83,6 @@ public class S6_16_DeleteOpportunity {
 		System.out.println(text2);
 		String expected = new String("No items to display.");
 		System.out.println(text2.equals(expected));
-		// driver.quit();
+		driver.quit();
 	}
 }

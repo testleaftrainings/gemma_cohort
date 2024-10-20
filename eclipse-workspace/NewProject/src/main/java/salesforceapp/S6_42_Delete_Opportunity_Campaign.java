@@ -41,21 +41,23 @@ public class S6_42_Delete_Opportunity_Campaign {
 
 		// Click on the dropdown icon in the Opportunities
 		driver.findElement(By.xpath("(//div[@title='New'])[2]")).click();
-		driver.findElement(By.xpath("(//label[text()='Opportunity Name']/following::input)[1]")).sendKeys("Automation by Rajeswari");
+		driver.findElement(By.xpath("(//label[text()='Opportunity Name']/following::input)[1]"))
+				.sendKeys("Automation by Rajeswari");
 		driver.findElement(By.xpath("(//label[text()='Close Date']//following::input)[1]")).click();
-		driver.findElement(By.xpath("//table[@class='slds-datepicker__month']//following::td[@aria-current='date']")).click();
+		driver.findElement(By.xpath("//table[@class='slds-datepicker__month']//following::td[@aria-current='date']"))
+				.click();
 		driver.findElement(By.xpath("//label[text()='Stage']//following::button")).click();
 		WebElement element2 = driver.findElement(By.xpath("//span[@title='Needs Analysis']"));
 		driver.executeScript("arguments[0].click();", element2);
-		driver.findElement(By.xpath("//span[text()='Description Information']//following::button[text()='Save']")).click();
-		//Thread.sleep(2000);
-		WebElement dropdownIcon=driver.findElement(By.xpath("//span[@title='Opportunities']//following::a[text()='Automation by Rajeswari']//following::a[1]"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", dropdownIcon);
-		//WebElement element1 = driver.findElement(By.xpath("//span[@title='Opportunities']//following::a[text()='Automation by Rajeswari']//following::a[1]"));
-		//driver.executeScript("arguments[0].click();", element1);
+		driver.findElement(By.xpath("//span[text()='Description Information']//following::button[text()='Save']"))
+				.click();
+		// Thread.sleep(2000);
+		WebElement dropdownIcon = driver.findElement(By.xpath(
+				"//span[@title='Opportunities']//following::a[text()='Automation by Rajeswari']//following::a[1]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", dropdownIcon);
 		Thread.sleep(7000);
-		
+
 		// Select Delete and Confirm the delete
 		driver.findElement(By.xpath("//a[@title='Delete']")).click();
 		driver.findElement(By.xpath("//span[text()='Delete']")).click();
@@ -68,7 +70,7 @@ public class S6_42_Delete_Opportunity_Campaign {
 		Thread.sleep(5000);
 		WebElement element3 = driver.findElement(By.xpath("//span[text()='Opportunities']"));
 		driver.executeScript("arguments[0].click();", element3);
-		
+
 		// Search for created oppurtunity and verify its deleted or not
 		driver.findElement(By.xpath("//input[@name='Opportunity-search-input']")).sendKeys("Automation by Rajeswari",
 				Keys.ENTER);

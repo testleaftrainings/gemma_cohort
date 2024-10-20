@@ -43,11 +43,12 @@ public class S6_5_CreateWorkTypeGroup {
 		driver.executeScript("arguments[0].click();", element1);
 
 		// Enter Work Type Group Name as 'Salesforce Automation by *Your Name*'
-		driver.findElement(By.xpath("//label[text()='Work Type Group Name']/following::input[1]")).sendKeys("Salesforce Automation by Rajeswari1");
+		driver.findElement(By.xpath("//label[text()='Work Type Group Name']/following::input[1]"))
+				.sendKeys("Salesforce Automation by Rajeswari1");
 
 		// Click save and verify Work Type Group Name
 		driver.findElement(By.xpath("//span[text()='System Information']/following::button[text()='Save']")).click();
-       
+
 		// The Work Type Group is created Successfully
 		String text = driver.findElement(By.xpath("//span[contains(@class,'toastMessage')]")).getText();
 		System.out.println(text);

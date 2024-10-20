@@ -35,7 +35,7 @@ public class S6_24_EditLegalEntity {
 		// Click on the legal Entities tab
 		WebElement element3 = driver.findElement(By.xpath("//a[@title='Legal Entities']"));
 		driver.executeScript("arguments[0].click();", element3);
-		
+
 		// Search the Legal Entity 'Salesforce Automation by *Your Name*'
 		WebElement element1 = driver.findElement(By.xpath("//input[@name='LegalEntity-search-input']"));
 		driver.executeScript("arguments[0].click();", element1);
