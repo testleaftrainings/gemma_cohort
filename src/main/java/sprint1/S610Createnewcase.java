@@ -1,12 +1,18 @@
 package sprint1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -14,11 +20,15 @@ import org.testng.annotations.Test;
 public class S610Createnewcase {
 	
 	@Test
-	public void addNewCase() {
+	public void addNewCase() throws InterruptedException, MalformedURLException {
 	
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--disable-notifications");
-		ChromeDriver driver = new ChromeDriver(option);
+		DesiredCapabilities dc = new DesiredCapabilities(option);
+		dc.setBrowserName("chrome");
+		dc.setPlatform(Platform.LINUX);
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
+		//ChromeDriver driver = new ChromeDriver(option);
 		driver.get("https://login.salesforce.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
@@ -28,22 +38,36 @@ public class S610Createnewcase {
 		driver.findElement(By.id("password")).sendKeys("Leaf$321");
 		driver.findElement(By.id("Login")).click();
 		//click app launcher and view all
-		driver.findElement(By.xpath("//button[@title='App Launcher']/div")).click();
+		WebElement menu = driver.findElement(By.xpath("//button[@title='App Launcher']"));
+		wait.until(ExpectedConditions.elementToBeClickable(menu));
+		js.executeScript("arguments[0].click();", menu);
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		//click sales and more arrow button
 		driver.findElement(By.xpath("//p[text()='Sales']")).click();
-		WebElement morebutton = driver.findElement(By.xpath("//span[text()='More']/ancestor::div[@role='listitem']"));
-		wait.until(ExpectedConditions.elementToBeClickable(morebutton));
-		morebutton.click();
-		//click cases from more option
-		driver.findElement(By.xpath("//span[text()='Cases']/ancestor::one-app-nav-bar-menu-item")).click();
-		//click cases to select new case
-		WebElement casedd = driver.findElement(By.xpath("//a[@title='Cases']/following::a[@role='button']"));
-		wait.until(ExpectedConditions.elementToBeClickable(casedd));
-		js.executeScript("arguments[0].click();", casedd);
-		WebElement newcase = driver.findElement(By.xpath("//span[text()='New Case']/ancestor::a"));
-		wait.until(ExpectedConditions.elementToBeClickable(newcase));
-		js.executeScript("arguments[0].click();", newcase);
+		Thread.sleep(3000);
+		try {
+			WebElement morebutton = driver.findElement(By.xpath("//span[text()='More']/parent::a"));
+			wait.until(ExpectedConditions.elementToBeClickable(morebutton));
+			morebutton.click();
+			//click cases from more option
+			WebElement cases = driver.findElement(By.xpath("//span[text()='Cases']/ancestor::a[@role='menuitem']"));
+			wait.until(ExpectedConditions.elementToBeClickable(cases));
+			js.executeScript("arguments[0].click();", cases);
+			//click cases to select new case
+			WebElement casedd = driver.findElement(By.xpath("//a[@title='Cases']/following::a[@role='button']"));
+			wait.until(ExpectedConditions.elementToBeClickable(casedd));
+			js.executeScript("arguments[0].click();", casedd);
+			WebElement newcase = driver.findElement(By.xpath("//span[text()='New Case']/ancestor::a"));
+			wait.until(ExpectedConditions.elementToBeClickable(newcase));
+			js.executeScript("arguments[0].click();", newcase);
+		} catch (TimeoutException e) {
+			WebElement cas = driver.findElement(By.xpath("//span[text()='Cases']/ancestor::a"));
+			wait.until(ExpectedConditions.elementToBeClickable(cas));
+			js.executeScript("arguments[0].click();", cas);
+			WebElement newcase = driver.findElement(By.xpath("//div[text()='New']/ancestor::a"));
+			wait.until(ExpectedConditions.elementToBeClickable(newcase));
+			js.executeScript("arguments[0].click();", newcase);
+		}
 		//click contact and select contact value
 		WebElement contact = driver.findElement(By.xpath("//label[text()='Contact Name']/following::input"));
 		wait.until(ExpectedConditions.elementToBeClickable(contact));
