@@ -1,4 +1,4 @@
-package salesforceapp;
+package sprint1;
 
 import java.time.Duration;
 
@@ -6,9 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 public class S6_41_CreateNewOpportunityCampaign {
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void test41() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		options.addArguments("--disable-notifications");

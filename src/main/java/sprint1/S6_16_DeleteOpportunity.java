@@ -1,4 +1,4 @@
-package salesforceapp;
+package sprint1;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,8 +19,7 @@ import org.testng.annotations.Test;
 
 public class S6_16_DeleteOpportunity {
 	@Test
-	public static void main(String[] args) throws InterruptedException, MalformedURLException {
-
+	public void test16() throws InterruptedException, MalformedURLException {
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		options.addArguments("--disable-notifications");

@@ -1,4 +1,4 @@
-package salesforceapp;
+package sprint1;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,22 +14,23 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 public class S6_19_NewContact {
-	public static void main(String[] args) throws InterruptedException, MalformedURLException {
-//@Test
-		//ChromeOptions options = new ChromeOptions();
-		//options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-		//options.addArguments("--disable-notifications");
-		//ChromeDriver driver = new ChromeDriver(options);
-		//driver.manage().window().maximize();
+	@Test
+	public void test19() throws InterruptedException, MalformedURLException {
+
+		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+		options.addArguments("--disable-notifications");
+		ChromeDriver driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
 		
-		DesiredCapabilities dc = 
+		/*DesiredCapabilities dc =
 				new DesiredCapabilities();
 				                dc.setBrowserName("MicrosoftEdge");
-				                dc.setPlatform(Platform.
+				                 dc.setPlatform(Platform.
 				LINUX);
 				                RemoteWebDriver driver = 
 				new RemoteWebDriver(
-				new URL("http://20.40.48.160:4444/wd/hub"), dc);
+				new URL("http://20.40.48.160:4444/wd/hub"), dc);*/
 				                
 		// Step 1: Login to Login | Salesforce
 		driver.get("https://login.salesforce.com/");

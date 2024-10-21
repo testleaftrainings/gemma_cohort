@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class S6_5_CreateWorkTypeGroup {
 	@Test
-	public void test3() throws InterruptedException {
+	public void test5() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		options.addArguments("--disable-notifications");

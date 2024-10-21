@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class S6_11_EditCase {
 	@Test
-	public void test12() throws InterruptedException {
+	public void test11() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		options.addArguments("--disable-notifications");
