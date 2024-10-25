@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sprint1.S6_38_AttachCampaign">
+      <class name="sprint1.S6_54_CreateFollowUpTask">
         <methods>
           <include name="test"/>
         </methods>
-      </class> <!-- sprint1.S6_38_AttachCampaign -->
+      </class> <!-- sprint1.S6_54_CreateFollowUpTask -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
