@@ -1,28 +1,39 @@
 package sprint1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class  S1613CreatecaseWOMandatoryFields {
+public class  S6_13CreatecaseWOMandatoryFields {
 	
 	@Test
-	public void casewoMandatory() {
-		
+	public void casewoMandatory() throws MalformedURLException, InterruptedException {
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--disable-notifications");
-		ChromeDriver driver = new ChromeDriver(option);
+		DesiredCapabilities dc = new DesiredCapabilities(option);
+		dc.setBrowserName("chrome");
+		dc.setPlatform(Platform.LINUX);
+	   //ChromeDriver driver = new ChromeDriver(option);
+		@SuppressWarnings("deprecation")
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
 		driver.get("https://login.salesforce.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 		JavascriptExecutor js =(JavascriptExecutor)driver;
 		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
 		driver.findElement(By.id("password")).sendKeys("Leaf$321");
@@ -35,11 +46,21 @@ public class  S1613CreatecaseWOMandatoryFields {
 		WebElement sales = driver.findElement(By.xpath("//p[text()='Sales']"));
 		wait.until(ExpectedConditions.elementToBeClickable(sales));
 		sales.click();
-		//Click on Cases tab
-		WebElement morebutton = driver.findElement(By.xpath("//span[text()='More']/ancestor::div[@role='listitem']"));
-		wait.until(ExpectedConditions.elementToBeClickable(morebutton));
-		morebutton.click();
-		driver.findElement(By.xpath("//span[text()='Cases']/ancestor::one-app-nav-bar-menu-item")).click();
+		Thread.sleep(3000);
+		try {
+			WebElement cases = driver.findElement(By.xpath("//span[text()='Cases']/parent::a"));
+			wait.until(ExpectedConditions.elementToBeClickable(cases));
+			js.executeScript("arguments[0].click();", cases);
+		} 
+		catch (TimeoutException e) {
+			WebElement more = driver.findElement(By.xpath("//span[text()='More']/parent::a"));
+			wait.until(ExpectedConditions.elementToBeClickable(more));
+			js.executeScript("arguments[0].click();", more);
+			WebElement cases = driver.findElement(By.xpath("//span[text()='Cases']/ancestor::a[@role='menuitem']"));
+			wait.until(ExpectedConditions.elementToBeClickable(cases));
+			js.executeScript("arguments[0].click();", cases);
+		}
+		
 		//Click on New button
 		driver.findElement(By.xpath("//div[text()='New']/ancestor::li")).click();
 		//Choose Contact Name from DropDown

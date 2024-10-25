@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,8 +21,7 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -51,7 +50,11 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+<<<<<<< HEAD
                     <span>C:\Users\Raja\AppData\Local\Temp\testng-eclipse--711663686\testng-customsuite.xml</span>
+=======
+                    <span>C:\Users\prave\AppData\Local\Temp\testng-eclipse-1127996038\testng-customsuite.xml</span>
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,8 +106,13 @@
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
+<<<<<<< HEAD
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="sprint1.S6_14_CreateOpportunity" class="method navigator-link" hash-for-method="test">test</a> <!-- method navigator-link -->
+=======
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Assignment3.Create_New_Refund" class="method navigator-link" hash-for-method="createNewRefund">createNewRefund</a> <!-- method navigator-link -->
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,15 +129,82 @@
         <div panel-name="suite-Default_suite" class="panel Default_suite">
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
               <img src="passed.png"/>
               <span class="class-name">sprint1.S6_14_CreateOpportunity</span>
+=======
+              <img src="failed.png"/>
+              <span class="class-name">Assignment3.Create_New_Refund</span>
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
                   <a name="test">
                   </a> <!-- test -->
                   <span class="method-name">test</span>
+=======
+                  <a name="createNewRefund">
+                  </a> <!-- createNewRefund -->
+                  <span class="method-name">createNewRefund</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.25.0&apos;, revision: &apos;030fcf7918&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.5.0-1025-azure&apos;, java.version: &apos;17.0.12&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [c2bcc59677fa1d063725317a344f314a, findElement {using=xpath, value=//span[text()=&apos;Refunds&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 129.0.2792.79, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:38695}, msedge: {msedgedriverVersion: 129.0.2792.86 (cca50bd2a45c..., userDataDir: /tmp/.com.microsoft.Edge.D6...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://172.21.0.4:4444/sessio..., se:cdpVersion: 129.0.2792.79, se:containerName: , se:noVncPort: 7900, se:vnc: ws://172.21.0.4:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.21.0.4:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c2bcc59677fa1d063725317a344f314a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:53)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at Assignment3.Create_New_Refund.createNewRefund(Create_New_Refund.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +212,11 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">C:\Users\Raja\AppData\Local\Temp\testng-eclipse--711663686\testng-customsuite.xml</span>
+=======
+            <span class="header-content">C:\Users\prave\AppData\Local\Temp\testng-eclipse-1127996038\testng-customsuite.xml</span>
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +225,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
+<<<<<<< HEAD
       &lt;class name=&quot;sprint1.S6_14_CreateOpportunity&quot;/&gt;
+=======
+      &lt;class name=&quot;Assignment3.Create_New_Refund&quot;/&gt;
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -188,14 +271,24 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
+<<<<<<< HEAD
 data.setCell(0, 1, 'test')
 data.setCell(0, 2, 'sprint1.S6_14_CreateOpportunity')
 data.setCell(0, 3, 8758);
+=======
+data.setCell(0, 1, 'createNewRefund')
+data.setCell(0, 2, 'Assignment3.Create_New_Refund')
+data.setCell(0, 3, 76330);
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 8 seconds</span>
+=======
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -221,9 +314,17 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
               <div class="chronological-class-name">sprint1.S6_14_CreateOpportunity</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">preSetup</span>
+=======
+              <div class="chronological-class-name">Assignment3.Create_New_Refund</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">createNewRefund</span>
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">

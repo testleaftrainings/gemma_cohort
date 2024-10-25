@@ -1,15 +1,20 @@
 package sprint1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -18,10 +23,15 @@ import org.testng.annotations.Test;
 public class S621Updatecontact {
 	
 	@Test
-	public void updateContact() throws InterruptedException {
+	public void updateContact() throws InterruptedException, MalformedURLException {
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--disable-notifications");
-		ChromeDriver driver = new ChromeDriver(option);
+		DesiredCapabilities dc = new DesiredCapabilities(option);
+		dc.setBrowserName("chrome");
+		dc.setPlatform(Platform.LINUX);
+		@SuppressWarnings("deprecation")
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
+		//ChromeDriver driver = new ChromeDriver(option);
 		driver.get("https://login.salesforce.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
@@ -48,10 +58,13 @@ public class S621Updatecontact {
 		Actions action = new Actions(driver);
 		while(!(actualCountstr.equals(split[0])))  // actualcount is not equal to exp count
 		{
+			List<WebElement> tableelements =null;
+			for(int i=0;i<actualCount;i++) {
 			List<WebElement> elements = driver.findElements(By.xpath("//th[@scope='row']//a")); //finding elements
 			WebElement targetelement = elements.get(elements.size()-1); //navigating to last of before element to reload DOM
 			action.moveToElement(targetelement).perform();// movinginto that field
-			List<WebElement> tableelements = driver.findElements(By.xpath("//th[@scope='row']//a")); //Printing the values of account
+			 tableelements = driver.findElements(By.xpath("//th[@scope='row']//a"));//Printing the values of account
+			}
 			System.out.println("The actual size of table is "+tableelements.size());
 			for(WebElement element: tableelements) {
 				System.out.println(element.getText().toString());

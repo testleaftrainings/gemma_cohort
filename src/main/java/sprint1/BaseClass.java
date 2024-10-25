@@ -38,7 +38,7 @@ public class BaseClass {
 		  URL("http://20.40.48.160:4444/wd/hub"), dc);
 		 
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 //      driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		driver.get("https://login.salesforce.com/");

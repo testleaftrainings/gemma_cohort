@@ -3,11 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="sprint1.S6_54_CreateFollowUpTask">
+=======
+      <class name="Assignment3.Create_New_Refund">
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
         <methods>
-          <include name="test"/>
+          <include name="createNewRefund"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- sprint1.S6_54_CreateFollowUpTask -->
+=======
+      </class> <!-- Assignment3.Create_New_Refund -->
+>>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

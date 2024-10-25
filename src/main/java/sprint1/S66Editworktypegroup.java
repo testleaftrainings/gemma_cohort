@@ -1,13 +1,18 @@
 package sprint1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -15,11 +20,16 @@ import org.testng.annotations.Test;
 public class S66Editworktypegroup {
 	
 	@Test
-	public void editWorkTypeGroup() throws InterruptedException {
+	public void editWorkTypeGroup() throws InterruptedException, MalformedURLException {
 		
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
-		ChromeDriver driver = new ChromeDriver(options);
+		DesiredCapabilities dc = new DesiredCapabilities(options);
+		dc.setBrowserName("chrome");
+		dc.setPlatform(Platform.LINUX);
+		@SuppressWarnings("deprecation")
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
+		//ChromeDriver driver = new ChromeDriver(options);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.get("https://login.salesforce.com");
 		driver.manage().window().maximize();
