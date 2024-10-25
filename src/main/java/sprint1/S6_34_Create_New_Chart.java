@@ -1,4 +1,4 @@
-package Assignment3;
+package sprint1;
 
 import java.time.Duration;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Create_New_Chart {
+public class S6_34_Create_New_Chart {
 
 	@Test
 public void createNewChart() throws InterruptedException {

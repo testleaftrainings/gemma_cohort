@@ -1,4 +1,4 @@
-package Assignment2;
+package sprint1;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class CreateOpportunity {
+public class S6_17_CreateOpportunity {
 
 	@Test
 	

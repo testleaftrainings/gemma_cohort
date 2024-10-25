@@ -1,4 +1,4 @@
-package Assignment2;
+package sprint1;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class DeleteContact {
+public class S6_22_DeleteContact {
 @Test
 	
 	public void deleteContact() throws InterruptedException {

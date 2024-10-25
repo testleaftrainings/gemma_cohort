@@ -1,4 +1,4 @@
-package Assignment2;
+package sprint1;
 
 import java.time.Duration;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class DeleteLegalEntity {
+public class S6_27_DeleteLegalEntity {
 @Test
 	
 	public void deleteContact() throws InterruptedException {

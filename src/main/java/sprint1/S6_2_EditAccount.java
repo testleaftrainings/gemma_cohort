@@ -1,4 +1,4 @@
-package Assignment1;
+package sprint1;
 
 import java.time.Duration;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class EditAccount {
+public class S6_2_EditAccount {
 
 	@Test
 	public void editAcct() throws InterruptedException {

@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class  S1613CreatecaseWOMandatoryFields {
+public class  S6_13CreatecaseWOMandatoryFields {
 	
 	@Test
 	public void casewoMandatory() throws MalformedURLException, InterruptedException {

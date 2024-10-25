@@ -1,4 +1,4 @@
-package Assignment3;
+package sprint1;
 
 import java.time.Duration;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Verify_Dashboard_Subscribe {
+public class S6_32_Verify_Dashboard_Subscribe {
 	@Test
 public void verifyDashboardSubscribe() throws InterruptedException {
 		

@@ -1,4 +1,4 @@
-package Assignment1;
+package sprint1;
 
 import java.time.Duration;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class SortWorkTypeGroup {
+public class S6_9_SortWorkTypeGroup {
 	
 
 	@Test

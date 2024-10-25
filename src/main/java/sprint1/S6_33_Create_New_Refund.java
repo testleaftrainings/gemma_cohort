@@ -1,4 +1,4 @@
-package Assignment3;
+package sprint1;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Create_New_Refund {
+public class S6_33_Create_New_Refund {
 
 	@Test
 	
