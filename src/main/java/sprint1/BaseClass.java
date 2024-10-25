@@ -20,7 +20,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseClass {
     public static RemoteWebDriver driver;
     WebDriverWait wait;
-    String remote = "No";  //default value should be Yes
+    String remote = "Yes";  //default value should be Yes
     @BeforeMethod
     public void preSetup() throws InterruptedException, MalformedURLException {
         switch (remote) {
@@ -36,7 +36,7 @@ public class BaseClass {
                 ChromeOptions chrome_options = new ChromeOptions();
                 chrome_options.addArguments("--disable-notifications");
                 DesiredCapabilities dc = new DesiredCapabilities(chrome_options);
-                dc.setBrowserName("chrome"); //
+                dc.setBrowserName("MicrosoftEdge"); //
                 dc.setPlatform(Platform.LINUX);
                 driver = new RemoteWebDriver(new
                         URL("http://20.40.48.160:4444/wd/hub"), dc);
