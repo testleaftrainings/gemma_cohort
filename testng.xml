@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Demo">
     <classes>
-      <class name="sprint1.SF_006DeleteAccount"/>
+      <class name="sprint1.S61CreateAccount"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
