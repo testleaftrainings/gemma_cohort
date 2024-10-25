@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Demo">
     <classes>
-      <class name="sprint1.S6_14_CreateOpportunity"/>
+      <class name="sprint1.S6_19_NewContact"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

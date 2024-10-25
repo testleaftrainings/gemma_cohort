@@ -13,31 +13,31 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-public class S6_19_NewContact {
+public class S6_19_NewContact extends BaseClass{
 	@Test
 	public void test19() throws InterruptedException, MalformedURLException {
 
-		ChromeOptions options = new ChromeOptions();
-		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-		options.addArguments("--disable-notifications");
-		ChromeDriver driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
-		
-		/*DesiredCapabilities dc =
-				new DesiredCapabilities();
-				                dc.setBrowserName("MicrosoftEdge");
-				                 dc.setPlatform(Platform.
-				LINUX);
-				                RemoteWebDriver driver = 
-				new RemoteWebDriver(
-				new URL("http://20.40.48.160:4444/wd/hub"), dc);*/
-				                
-		// Step 1: Login to Login | Salesforce
-		driver.get("https://login.salesforce.com/");
-		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
-		driver.findElement(By.id("password")).sendKeys("Leaf$321");
-		driver.findElement(By.id("Login")).click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(300));
+//		ChromeOptions options = new ChromeOptions();
+//		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+//		options.addArguments("--disable-notifications");
+//		ChromeDriver driver = new ChromeDriver(options);
+//		driver.manage().window().maximize();
+//		
+//		/*DesiredCapabilities dc =
+//				new DesiredCapabilities();
+//				                dc.setBrowserName("MicrosoftEdge");
+//				                 dc.setPlatform(Platform.
+//				LINUX);
+//				                RemoteWebDriver driver = 
+//				new RemoteWebDriver(
+//				new URL("http://20.40.48.160:4444/wd/hub"), dc);*/
+//				                
+//		// Step 1: Login to Login | Salesforce
+//		driver.get("https://login.salesforce.com/");
+//		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
+//		driver.findElement(By.id("password")).sendKeys("Leaf$321");
+//		driver.findElement(By.id("Login")).click();
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(300));
 
 		// Click on Global Actions SVG icon
 		WebElement element = driver
