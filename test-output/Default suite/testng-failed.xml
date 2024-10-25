@@ -3,19 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="sprint1.S6_54_CreateFollowUpTask">
-=======
-      <class name="Assignment3.Create_New_Refund">
->>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
+      <class name="sprint1.SF_006DeleteAccount">
         <methods>
-          <include name="createNewRefund"/>
+          <include name="createAccount"/>
+          <include name="deleteAccount_S6_3"/>
+          <include name="preSetup"/>
+          <include name="closeBrowser"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- sprint1.S6_54_CreateFollowUpTask -->
-=======
-      </class> <!-- Assignment3.Create_New_Refund -->
->>>>>>> 8598ebba8034712ae1396066ecb45a47b434548e
+      </class> <!-- sprint1.SF_006DeleteAccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
