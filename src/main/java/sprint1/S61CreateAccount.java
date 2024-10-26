@@ -35,11 +35,14 @@ public class S61CreateAccount{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
-		driver.findElement(By.id("password")).sendKeys("Leaf$321");
+		driver.findElement(By.id("password")).sendKeys("Leaf@123");
 		driver.findElement(By.id("Login")).click();
+		Thread.sleep(6000);
 		WebElement menu = driver.findElement(By.xpath("//button[@title='App Launcher']"));
 		wait.until(ExpectedConditions.elementToBeClickable(menu));
 		js.executeScript("arguments[0].click();", menu);
+		Thread.sleep(6000);
+
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		WebElement sales = driver.findElement(By.xpath("//p[text()='Sales']"));
 		wait.until(ExpectedConditions.elementToBeClickable(sales));
