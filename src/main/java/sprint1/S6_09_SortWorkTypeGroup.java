@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class S6_9_SortWorkTypeGroup {
+public class S6_09_SortWorkTypeGroup {
 	
 
 	@Test
@@ -22,7 +22,7 @@ public class S6_9_SortWorkTypeGroup {
 	// Step 1: Login to Salesforce
 		
 		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
-		driver.findElement(By.id("password")).sendKeys("Leaf$321");
+		driver.findElement(By.id("password")).sendKeys("Leaf@123");
 		driver.findElement(By.id("Login")).click();
 		driver.findElement(By.xpath("//button[@title='App Launcher']/div[1]")).click();
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
@@ -46,11 +46,16 @@ public class S6_9_SortWorkTypeGroup {
      
         js.executeScript("arguments[0].click();", parentElement);
         
-        driver.findElement(By.xpath("//span[text()='Work Type Group Name']/preceding-sibling::span[text()='Sort']")).click();
+        Thread.sleep(3000);
+        String pseudoElementContent = "sorted";
+        WebElement eleSort = driver.findElement(By.xpath("//span[text()='Work Type Group Name']/preceding-sibling::span[text()='Sort']"));
+        js.executeScript("arguments[0].click();", eleSort);
         
-        String pseudoElementContent = (String) js.executeScript(
-                "return window.getComputedStyle(arguments[0], '::after').getPropertyValue('content');",
-                parentElement);
+        
+       // String pseudoElementContent = (String) js.executeScript(
+        //Paste code form gokul class 
+        //        "return window.getComputedStyle(arguments[0], '::after').getPropertyValue('content');",
+       //         parentElement);
         
      // Print the content of the ::after pseudo-element
         

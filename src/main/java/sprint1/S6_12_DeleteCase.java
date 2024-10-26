@@ -24,7 +24,7 @@ public class S6_12_DeleteCase {
 		// Step 1: Login to Salesforce
 			
 			driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
-			driver.findElement(By.id("password")).sendKeys("Leaf$321");
+			driver.findElement(By.id("password")).sendKeys("Leaf@123");
 			driver.findElement(By.id("Login")).click();
 			
 		//Click on toggle menu button from the left corner
@@ -39,20 +39,22 @@ public class S6_12_DeleteCase {
 			WebElement eleCases = driver.findElement(By.xpath("//a[@title='Cases']"));
 			driver.executeScript("arguments[0].click();", eleCases);
 			  // Step 5: Click on the Dropdown icon and select Delete from the case you created
-            WebElement caseDropdown = driver.findElement(By.xpath("//span[text()='Case Owner Alias']/ancestor::tr//button"));
-            caseDropdown.click();
+            //WebElement caseDropdown = driver.findElement(By.xpath("//span[text()='Case Owner Alias']/ancestor::tr//button"));
+            Thread.sleep(3000);
+            WebElement eleDropDown =  driver.findElement(By.xpath("//table[@aria-label='Recently Viewed']//td[7]/span//a"));
+            eleDropDown.click();
             Thread.sleep(2000);
             driver.findElement(By.xpath("//a[@title='Delete']")).click();
 
             // Confirm deletion
-           // driver.findElement(By.xpath("//button[@title='Delete']")).click();
+           driver.findElement(By.xpath("//button[@title='Delete']")).click();
 
             // Step 6: Verify the case with your name is deleted or not
             boolean isCaseDeleted = driver.findElements(By.xpath("//span[text()='Case Owner Alias']")).isEmpty();
             if (isCaseDeleted) {
-                System.out.println("The case  is deleted.");
+                System.out.println("The case is deleted.");
             } else {
-                System.out.println("The case  is still present.");
+                System.out.println("The case is present.");
             }
         
 			
