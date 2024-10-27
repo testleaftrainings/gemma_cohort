@@ -9,6 +9,7 @@
       <class name="sprint1.Madhavan_NBA_VerifyPlayerAge"/>
       <class name="sprint1.Kiruthika_Assessment"/>
       <class name="sprint1.Senthil_NBAAssessment"/>
+      <class name="sprint1.TestCase_Rajeswari "/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
