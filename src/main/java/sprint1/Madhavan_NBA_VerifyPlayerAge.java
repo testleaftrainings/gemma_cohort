@@ -22,7 +22,8 @@ import java.util.List;
 
 public class Madhavan_NBA_VerifyPlayerAge {
 
-    RemoteWebDriver driver;
+    //RemoteWebDriver driver;
+    ChromeDriver driver;
     WebDriverWait wait;
     @Test
     public void verifyPlayerAge() throws MalformedURLException, InterruptedException {
