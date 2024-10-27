@@ -26,11 +26,11 @@ public class Madhavan_NBA_VerifyPlayerAge {
     WebDriverWait wait;
     @Test
     public void verifyPlayerAge() throws MalformedURLException, InterruptedException {
-        DesiredCapabilities dc = new DesiredCapabilities();
+       /* DesiredCapabilities dc = new DesiredCapabilities();
         dc.setBrowserName("chrome"); //
-        dc.setPlatform(Platform.LINUX);
-        driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
-        //driver=new ChromeDriver();
+        dc.setPlatform(Platform.LINUX);*/
+        //driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
+        driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         wait = new WebDriverWait(driver, Duration.ofSeconds(50));
