@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Assignment3.Create_New_Refund">
+      <class name="sprint1.S659_Create_opportunity">
         <methods>
-          <include name="createNewRefund"/>
+          <include name="createOpportunity"/>
         </methods>
-      </class> <!-- Assignment3.Create_New_Refund -->
+      </class> <!-- sprint1.S659_Create_opportunity -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
