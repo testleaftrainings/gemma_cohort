@@ -4,6 +4,7 @@
   <test thread-count="5" name="Demo">
     <classes>
       <class name="sprint1.S6_19_NewContact"/>
+      <class name="sprint1.Raja_Assessment"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

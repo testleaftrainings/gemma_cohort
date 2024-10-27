@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sprint1.SF_006DeleteAccount">
+      <class name="sprint1.Raja_Assessment">
         <methods>
-          <include name="createAccount"/>
-          <include name="deleteAccount_S6_3"/>
-          <include name="preSetup"/>
-          <include name="closeBrowser"/>
+          <include name="casewoMandatory"/>
         </methods>
-      </class> <!-- sprint1.SF_006DeleteAccount -->
+      </class> <!-- sprint1.Raja_Assessment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
