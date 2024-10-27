@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 public class Utility {
     public static String getTmrwDate(){
@@ -30,4 +31,25 @@ public class Utility {
         System.out.println(tomorrowPluseOneDateAsString);
         return tomorrowPluseOneDateAsString;
     }
+
+    public static String addDate(int num) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, num);
+        String format = sdf.format(cal.getTime());
+        //System.out.println(format);
+        return format;
+    }
+
+
+    public static String generateRandom() {
+        String aToZ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // 36 letter.
+        Random rand=new Random();
+        StringBuilder res=new StringBuilder();
+        for (int i = 0; i < 17; i++) {
+            int randIndex=rand.nextInt(aToZ.length());
+            res.append(aToZ.charAt(randIndex));
+        }
+        return res.toString();
+}
 }
