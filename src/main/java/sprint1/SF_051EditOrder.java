@@ -5,10 +5,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class SF_036EditOrder extends  BaseClass {
+public class SF_051EditOrder extends  BaseClass {
 
     @Test
-    public void tc_036EditOrder() throws InterruptedException {
+    public void tc_051EditOrder() throws InterruptedException {
         String contractName = "00000133";
         String accountName = "Testleaf Software";
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -31,7 +31,8 @@ public class SF_036EditOrder extends  BaseClass {
         driver.findElement(By.xpath("(//button[@title='Clear Selection'])[2]")).click();
         driver.findElement(By.xpath("//input[@placeholder='Search Accounts...']")).sendKeys(accountName);
         driver.findElement(By.xpath("(//ul[@role='group'])[2]/li")).click();
-        Thread.sleep(2000);
+         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
+
     }
 }
