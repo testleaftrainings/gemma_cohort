@@ -1,16 +1,35 @@
 package sprint1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-public class S6_2_EditAccount {
+public class S6_02_EditAccount {
 
 	@Test
-	public void editAcct() throws InterruptedException {
+	public void editAcct() throws InterruptedException, MalformedURLException {
+		
+		
+		/* 
+		 *EdgeOptions options = new EdgeOptions();
+		 * DesiredCapabilities dc = new DesiredCapabilities();
+		 
+		 dc.setBrowserName("MicrosoftEdge");
+		 //dc.setBrowserName("chrome');
+		 dc.setPlatform(Platform.LINUX);
+		 RemoteWebDriver driver =new RemoteWebDriver(new URL(" http://20.40.48.160:4444/wd/hub"), dc);
+        */
+						
 		
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("https://login.salesforce.com/");
@@ -20,7 +39,7 @@ public class S6_2_EditAccount {
 	// Step 1: Login to Salesforce
 		
 		driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
-		driver.findElement(By.id("password")).sendKeys("Leaf$321");
+		driver.findElement(By.id("password")).sendKeys("Leaf@123");
 		driver.findElement(By.id("Login")).click();
 		driver.findElement(By.xpath("//button[@title='App Launcher']/div[1]")).click();
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
@@ -32,9 +51,37 @@ public class S6_2_EditAccount {
 		driver.executeScript("arguments[0].click();", eleAccounts);
 		
 		driver.findElement(By.xpath("//div[@type='search']/input[1]")).sendKeys("Kiruthika");
+		driver.findElement(By.xpath("//div[@type='search']/input[1]")).sendKeys(Keys.TAB);
+		
+		Thread.sleep(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		 WebElement eleDropDown = driver.findElement(By.xpath("//table[@aria-label='Recently Viewed']//tr/td[6]//a"));
+	     js.executeScript("arguments[0].click();", eleDropDown);
+	     Thread.sleep(2000);
+	     driver.findElement(By.xpath("//a[@title='Edit']")).click();
+		//WebElement eleActions = driver.findElement(By.xpath("//span[text()='Show Actions']"));
+		//driver.executeScript("arguments[0].click();", eleActions);
+		//Thread.sleep(2000);
+		//driver.findElement(By.xpath("//div[@title='Edit']")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//label[text()='Type']//following::button[1]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//span[@title='Technology Partner']")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//label[text()='Industry']//following::button[1]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//span[@title='Healthcare']")).click();
+		Thread.sleep(2000);
 		
 		
-		//Click on the displayed Account Dropdown icon and select Edit
+		
+		
+		
+		
+		
+	/*	//Click on the displayed Account Dropdown icon and select Edit
 		////a[@title='Kiruthika R']/ancestor::tr//button
 		 WebElement accountDropdown = driver.findElement(By.xpath("//a[@title='Kiruthika R']/ancestor::tr//button"));
          accountDropdown.click();
@@ -54,7 +101,7 @@ public class S6_2_EditAccount {
 		//Select Industry as Healthcare 
 		
 	    driver.findElement(By.xpath("//label[text()='Industry']/following::button[1]")).click();
-	    driver.findElement(By.xpath("//span[text()='Healthcare']")).click();
+	    driver.findElement(By.xpath("//span[text()='Healthcare']")).click();*/
 		
 	    //Enter Billing Address
 		
@@ -85,41 +132,56 @@ public class S6_2_EditAccount {
 	    
 	    
 	    //Select Active as NO
-	    driver.findElement(By.xpath("//label[text()='Active']/following::button[1]")).click();
+	    WebElement eleActive = driver.findElement(By.xpath("//label[text()='Active']/following::button[1]"));
+	    js.executeScript("arguments[0].click()", eleActive);
+	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("//span[text()='No']")).click();
 	    
 	    //Enter Unique Number in Phone Field
 	    
-	    driver.findElement(By.xpath("//label[text()='Phone']/following::input[1]")).sendKeys("8765432190");
+	    WebElement elePhone = driver.findElement(By.xpath("//label[text()='Phone']/following::input[1]"));
+	    elePhone.clear();
+	    elePhone.sendKeys("8765432190");
+	    
+	    
+	    String inputPhoneNum = "8765432190";
+	    
 	    
 	    //Select Upsell Oppurtunity as No
-	    driver.findElement(By.xpath("//label[text()='Upsell Opportunity']/following::button[1]")).click();
+	    WebElement eleUpsell = driver.findElement(By.xpath("//label[text()='Upsell Opportunity']/following::button[1]"));
+	    js.executeScript("arguments[0].click()",eleUpsell);
+	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("//span[text()='No']")).click();
 	    
 	   
 	    
 	    
-	    
+	    Thread.sleep(2000);
 	    // Click on save and verfiy Phone number
 	    driver.findElement(By.xpath("//label[text()='Description']/following::button[text()='Save']")).click();
 	    
-	  
+	    Thread.sleep(4000);
+	    
+	    String text = driver.findElement(By.xpath("//div[contains(@id,'toastDescription')]")).getText();
+    	System.out.println(text);
 	    
 	    
 	    
 	    //Verify phone number
-	    Thread.sleep(2000);
-	    String phoneNum = driver.findElement(By.xpath("//label[text()='Phone']/following::input[1]")).getText();
+	    Thread.sleep(5000);
+	    String phoneNum = driver.findElement(By.xpath("//td[4]//span[1]")).getText().trim();
+	    System.out.println(phoneNum);
 	    
-	    if(phoneNum=="8765432190") 
+	    //String phoneNum1 = driver.findElement(By.xpath("//tr[1]//td[4]//span[contains(@class,'forceOutputPhone')]")).getText().trim();
+	    //System.out.println(phoneNum1);
+	    
+	    if(phoneNum.equals(inputPhoneNum)) 
 	     	
 	    	System.out.println("Test Passed: Phone number  matching.");
 	    
 	    else
 	    	System.out.println("Test Failed: Phone number not matching.");
-	    
-	    String text = driver.findElement(By.xpath("//div[contains(@id,'toastDescription')]")).getText();
-    	System.out.println(text);
+	   
 	    
 	}
 }

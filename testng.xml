@@ -5,6 +5,13 @@
     <classes>
       <class name="sprint1.S6_19_NewContact"/>
       <class name="sprint1.Raja_Assessment"/>
+    <!--  <class name="sprint1.S61CreateAccount"/>-->
+     <!-- <class name="sprint1.SF_028CreateDashBoard"/>-->
+     <!-- <class name="sprint1.S6_19_NewContact"/>-->
+      <class name="sprint1.Madhavan_NBA_VerifyPlayerAge"/>
+      <class name="sprint1.Kiruthika_Assessment"/>
+      <class name="sprint1.Senthil_NBAAssessment"/>
+      <class name="sprint1.TestCase_Rajeswari "/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
