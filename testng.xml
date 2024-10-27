@@ -3,8 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Demo">
     <classes>
-      <class name="sprint1.S61CreateAccount"/>
-      <class name="sprint1.SF_028CreateDashBoard"/>
+    <!--  <class name="sprint1.S61CreateAccount"/>-->
+     <!-- <class name="sprint1.SF_028CreateDashBoard"/>-->
+     <!-- <class name="sprint1.S6_19_NewContact"/>-->
+      <class name="sprint1.Madhavan_NBA_VerifyPlayerAge"/>
+      <class name="sprint1.Kiruthika_Assessment"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
