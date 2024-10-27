@@ -29,8 +29,8 @@ public class Madhavan_NBA_VerifyPlayerAge {
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setBrowserName("chrome"); //
         dc.setPlatform(Platform.LINUX);
-        //driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
-        driver=new ChromeDriver();
+        driver = new RemoteWebDriver(new URL("http://20.40.48.160:4444/wd/hub"), dc);
+        //driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         wait = new WebDriverWait(driver, Duration.ofSeconds(50));
