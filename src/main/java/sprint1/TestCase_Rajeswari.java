@@ -39,15 +39,12 @@ public class TestCase_Rajeswari {
 		driver.findElement(By.xpath("//a[text()='See All Player Stats']")).click();
 
 		// Choose 'Season' as '2023-24'
-		driver.findElement(By.xpath("(//p[text()='Season']//following::div)[1]")).click();
 		driver.findElement(By.xpath("//option[text()='2023-24']")).click();
 
 		// Choose 'Season Type' as 'NBA Cup'
-		driver.findElement(By.xpath("(//p[text()='Season Type']//following::div)[1]")).click();
 		driver.findElement(By.xpath("//option[text()='NBA Cup']")).click();
 
 		// Choose 'Per Mode' as 'Per Game'
-		driver.findElement(By.xpath("(//p[text()='Per Mode']//following::div)[1]")).click();
 		driver.findElement(By.xpath("//option[text()='Per Game']")).click();
 
 		// Choose 'Season Segment' as 'Last Game'
