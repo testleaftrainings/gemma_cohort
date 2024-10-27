@@ -24,7 +24,6 @@ public class Madhavan_NBA_VerifyPlayerAge {
 
     RemoteWebDriver driver;
     WebDriverWait wait;
-
     @Test
     public void verifyPlayerAge() throws MalformedURLException, InterruptedException {
         DesiredCapabilities dc = new DesiredCapabilities();
