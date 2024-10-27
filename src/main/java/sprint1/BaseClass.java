@@ -2,7 +2,12 @@ package sprint1;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
@@ -25,6 +30,7 @@ public class BaseClass {
     public void preSetup() throws InterruptedException, MalformedURLException {
         switch (remote) {
             case "No":
+                System.out.println("In Local");
                 ChromeOptions chromeoptions = new ChromeOptions();
                 chromeoptions.addArguments("--disable-notifications");
                 driver = new ChromeDriver(chromeoptions);
@@ -33,6 +39,7 @@ public class BaseClass {
                 //EdgeOptions edgeOptions = new EdgeOptions();
                 //edgeOptions.addArguments("--disable-notifications");
                 //DesiredCapabilities dc = new DesiredCapabilities(edgeOptions);
+                System.out.println("In Remote");
                 ChromeOptions chrome_options = new ChromeOptions();
                 chrome_options.addArguments("--disable-notifications");
                 DesiredCapabilities dc = new DesiredCapabilities(chrome_options);
@@ -54,6 +61,9 @@ public class BaseClass {
         driver.get("https://login.salesforce.com/");
         driver.findElement(By.id("username")).sendKeys("gokul.sekar@testleaf.com");
         driver.findElement(By.id("password")).sendKeys("Leaf@123");
+        // driver.get("https://login.salesforce.com/");
+        //driver.findElement(By.id("username")).sendKeys("learners@testleaf.com");
+        //driver.findElement(By.id("password")).sendKeys("Leaf@1234");
         driver.findElement(By.id("Login")).click();
         Thread.sleep(5000);
     }
@@ -66,11 +76,18 @@ public class BaseClass {
     public void waitForElementVisible(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-    public void waitForElementClicable(By locator) {
+    public void waitForElementClickable(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public void switchFrame(By locator) {
         driver.switchTo().frame(driver.findElement(locator));
     }
+
+    public void windowHandle(RemoteWebDriver driver,int a) {
+        Set<String> windowHandles = driver.getWindowHandles();
+        List<String> windowList = new ArrayList<>(windowHandles);
+        driver.switchTo().window(windowList.get(a));
+    }
+
 }
