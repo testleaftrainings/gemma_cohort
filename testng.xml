@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Demo">
-    <classes>
-    <!--  <class name="sprint1.S61CreateAccount"/>-->
-     <!-- <class name="sprint1.SF_028CreateDashBoard"/>-->
-     <!-- <class name="sprint1.S6_19_NewContact"/>-->
-      <class name="sprint1.Madhavan_NBA_VerifyPlayerAge"/>
-      <class name="sprint1.Kiruthika_Assessment"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite" parallel="classes" thread-count="2">
+    <test name="test">
+        <classes>
+            <class name="Test_Login"></class>
+            <class name="Test_Login1"></class>
+        </classes>
+    </test>
+</suite>
