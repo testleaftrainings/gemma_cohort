@@ -4,16 +4,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.logging.Logger;
 
 public class Test_Login {
 
-
     @Test(dataProvider = "Login")
-    public void login(String uName,String psWd)
-    {
+    public void login(String uName,String psWd) throws InterruptedException {
         ChromeDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        Thread.sleep(6000);
         driver.get("https://opensource-demo.orangehrmlive.com");
         driver.findElement(By.name("username")).sendKeys(uName);
         driver.findElement(By.name("password")).sendKeys(psWd);
